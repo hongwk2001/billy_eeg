@@ -60,8 +60,7 @@ public class HelloEEGActivity extends  Activity  {
 	static final int CONST_SIGNAL = 3;
 	
 	
-	int att_avg=0, med_avg=0, att_cnt=0;
-	int  med_cnt=0, att_tot=0, med_tot=0;
+	int att_avg=0, med_avg=0, att_cnt=0, med_cnt=0, att_tot=0, med_tot=0;
 	int att_val =0, med_val = 0, poor_signal = 1 ; 
 	
 	int len_limit = 50;
