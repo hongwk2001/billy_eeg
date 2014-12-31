@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?> 
+  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      android:layout_width="match_parent"
+      android:layout_height="fill_parent"
+      android:orientation="vertical" >
+ 
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        android:layout_gravity="top" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dp" >
+
+            <ToggleButton
+            android:id="@+id/tg_attention"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" 
+            android:onClick="togglAttention"
+            android:textOn="@string/attention"
+            android:textOff="@string/attention" />
+
+            <TextView
+                android:id="@+id/tv_attention"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="..." />
+        </TableRow>
+
+          <TableRow
+              android:id="@+id/tableRow5"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content" 
+              android:padding="3dp" >
+
+            <TextView
+                android:id="@+id/tv_att_avg"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="A avg" /> 
+            <TextView
+                android:id="@+id/tv_att_tot"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" 
+                android:text="A tot" /> 
+          </TableRow>
+        
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dp" >
+
+            <ToggleButton
+            android:id="@+id/tg_meditation"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" 
+            android:onClick="toggleMeditation"
+            android:textOn="@string/meditation"
+            android:textOff="@string/meditation" />
+            
+            <TextView
+                android:id="@+id/tv_meditation"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="..." />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dp"   >
+  
+            <TextView
+                android:id="@+id/tv_med_avg"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="M avg" /> 
+            <TextView
+                android:id="@+id/tv_med_tot"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="M tot" /> 
+          </TableRow>
+          
+        <TableRow 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dp" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Blink" />
+
+            <TextView
+                android:id="@+id/tv_blink"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="..." />
+        </TableRow>
+
+                
+        
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+     <ScrollView
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_weight="1"
+         android:fadeScrollbars="true"
+         android:padding="2dp"
+         android:scrollbars="vertical" >
+        
+    </ScrollView>
+    </TableRow>
+
+        <TableRow 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dp" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Signal" />
+
+            <TextView
+                android:id="@+id/tv_signal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="..." />
+        </TableRow> 
+  </TableLayout>
+   
+    <LinearLayout
+        android:id="@+id/ll_graph"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_gravity="top"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+ 
+    </LinearLayout>
+     
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:gravity="bottom"
+    android:orientation="horizontal" >
+ 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Read interval"
+                
+                android:layout_weight="1" />
+
+           <EditText
+               android:id="@+id/et_read_interval"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_weight="0.57"
+               android:inputType="number"
+               android:maxLength="3"
+               android:maxWidth="10dp"
+               android:text="5"
+               android:textAppearance="?android:attr/textAppearanceMedium" >
+  
+        </EditText>
+
+           <CheckBox
+               android:id="@+id/chk_read" android:layout_weight="1"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:onClick="checkRead"
+               android:text="Read" />
+    </LinearLayout>  
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/tv_conn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="" />
+ 
+     </LinearLayout> 
+     
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom|left"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="doStuff"
+            android:text="@string/connect" />
+
+        <Button
+            android:id="@+id/btn_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="stop"
+            android:text="@string/close" />
+        
+        <Button
+            android:id="@+id/btn_addrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="addRow"
+            android:text="Add Row" />
+        
+        <Button
+            android:id="@+id/btn_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="reset"
+            android:text="Reset" />
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left|bottom"
+        android:orientation="horizontal" >
+
+        <ToggleButton
+            android:id="@+id/toggleButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" 
+            android:onClick="toggleBackground"
+            android:textOn="@string/keep_log" 
+            android:textOff="@string/keep_log" />
+
+         <ToggleButton
+            android:id="@+id/toggleButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="clickToggleScreenOn" 
+            android:textOn="@string/keep_screen_on"
+            android:textOff="@string/keep_screen_on"  /> 
+
+    </LinearLayout>
+    
+     
+</LinearLayout> 

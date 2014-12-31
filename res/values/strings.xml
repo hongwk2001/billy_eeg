@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources> 
+    <string name="app_name">Billy EEG</string>
+    <string name="action_settings">action_settings</string>
+   <string name="history">history</string>
+   <string name="daily_history">Daily_history</string>
+   
+   
+    <string name="connect">Connect</string>
+    <string name="close">Disconnect</string>
+    <string name="attention">Attention</string>
+    <string name="meditation">Meditation</string>
+    
+    <string name="keep_log">Keep Run</string> 
+   <string name="wake_lock_desc">keeps CPU on when screen off. Careful on battery</string>
+     
+    <string name="keep_screen_on">Keep screen On</string> 
+   <string name="keep_screen_on_desc">Keep screen on. Careful on battery</string>
+    
+</resources>
