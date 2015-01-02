@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources> 
-    <string name="app_name">Billy EEG</string>
+    <string name="app_name">Billy EEG</string> 
     <string name="action_settings">action_settings</string>
    <string name="history">history</string>
+   <string name="daily_detail">Daily Detail</string>
    <string name="daily_history">Daily_history</string>
    
    

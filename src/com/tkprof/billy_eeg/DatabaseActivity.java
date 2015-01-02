@@ -1,5 +1,9 @@
 package com.tkprof.billy_eeg;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
  
@@ -8,6 +12,7 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View; 
+import android.view.Window;
 import android.widget.ListView;
 import android.widget.TextView; 
 import android.widget.ArrayAdapter;
@@ -21,7 +26,7 @@ public class DatabaseActivity extends ListActivity {
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.listview); 
+    setContentView(R.layout.listview);
  
     Bundle extras = getIntent().getExtras();
     if (extras != null) { 
@@ -29,6 +34,8 @@ public class DatabaseActivity extends ListActivity {
   		.show();
       date1 = extras.getString("datetime"); 
     }
+    
+     setTitle(getTitle()+"-" + date1) ;
     
     datasource = new BillyEEGDataSource(this);
     datasource.open();
@@ -53,7 +60,7 @@ public class DatabaseActivity extends ListActivity {
     @SuppressWarnings("unchecked")
     ArrayAdapter<EEGRecord> adapter = (ArrayAdapter<EEGRecord>) getListAdapter();
     EEGRecord EEGRecord = null;
-     
+    /* 
     switch (view.getId()) {
     case R.id.add: 
       break;
@@ -64,7 +71,7 @@ public class DatabaseActivity extends ListActivity {
         adapter.remove(EEGRecord);
       }
       break;
-    }
+    }*/
     adapter.notifyDataSetChanged();
   }
 
@@ -88,12 +95,23 @@ public class DatabaseActivity extends ListActivity {
 	 Toast.makeText(this, "sel: " + txt1.getText().toString(), Toast.LENGTH_SHORT)
  		.show();
 	 
-	  Intent intent = new Intent(this, DatabaseActivity.class);
+	String dt = txt1.getText().toString().substring(0, 10);
+	 
+	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+    Date convertedDate = new Date();
+    try {
+        convertedDate = dateFormat.parse(dt);
+    } catch (ParseException e) {
+    	// if it's not good format, just don't do any
+    	// could be already detail
+       return;
+    }
 
-	  intent.putExtra("datetime",  txt1.getText().toString().substring(0, 10));
+	Intent intent = new Intent(this, DatabaseActivity.class);
+
+	intent.putExtra("datetime",  txt1.getText().toString().substring(0, 10));
 	    startActivity(intent);
 	     
 	}
-  
 } 
 

@@ -79,10 +79,9 @@ public class BillyEEGDataSource {
               " avg(med_avg), sum(med_tot)   " +
 	           " from billy_eeg  " +
 	           "group by substr(datetime, 1,10) " +
-	           "order by substr(datetime, 1,10) desc" 
+	           "order by dt desc" 
 	    		, null);
-	    
-	   
+
 	    cursor.moveToFirst();
 	    while (!cursor.isAfterLast()) {
 	    	EEGRecord eachrow = cursorToRow(cursor);
@@ -96,11 +95,16 @@ public class BillyEEGDataSource {
   public List<EEGRecord> getAllRowsByDate( String date1) {
 	    List<EEGRecord> rows = new ArrayList<EEGRecord>();
 	    
-	    String [] dates = {date1 };
+	    String [] dates = {date1};
 
-	    Cursor cursor = database.query(
-	    	 BillyEEGDBHelper.TABLE_BILLY_EEG,
-	        allColumns, " datetime like ?||'%' ", dates, null, null, "datetime desc");
+	    Cursor cursor = database.rawQuery (
+	              "select substr(datetime, 12,5) dt," +
+	              "  att_avg , att_tot ,  " +
+	              " med_avg ,  med_tot   " +
+		           " from billy_eeg  " +
+	               "where  datetime like ?||'%' " +
+		           "order by dt desc" 
+		    		, dates);
 
 	    cursor.moveToFirst();
 	    while (!cursor.isAfterLast()) {

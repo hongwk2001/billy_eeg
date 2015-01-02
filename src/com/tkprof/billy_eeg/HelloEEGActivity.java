@@ -60,8 +60,7 @@ public class HelloEEGActivity extends  Activity  {
 	static final int CONST_SIGNAL = 3;
 	
 	
-	int att_avg=0, med_avg=0, att_cnt=0;
-	int  med_cnt=0, att_tot=0, med_tot=0;
+	int att_avg=0, med_avg=0, att_cnt=0, med_cnt=0, att_tot=0, med_tot=0;
 	int att_val =0, med_val = 0, poor_signal = 1 ; 
 	
 	int len_limit = 50;
@@ -145,7 +144,7 @@ public class HelloEEGActivity extends  Activity  {
 		    graphView.addSeries(att_Series); // data 
 		    graphView.addSeries(med_Series); // data 
 		    graphView.addSeries(sig_Series); // data 
-		 graphView.setViewPort(0, 12);
+		 graphView.setViewPort(0, 60);
 		   graphView.getGraphViewStyle().setNumHorizontalLabels(5);
 		   graphView.getGraphViewStyle().setNumVerticalLabels(5); 
 		   graphView.getGraphViewStyle().setVerticalLabelsWidth(40);
@@ -164,17 +163,14 @@ public class HelloEEGActivity extends  Activity  {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    // Handle presses on the action bar items
-	    switch (item.getItemId()) { 
-	    case R.id.action_settings:
-            openSettings();
-            return true;
+	    switch (item.getItemId()) {  
 	    case R.id.action_history:
             openHistory();
             return true;
 	    case R.id.daily_history:
             openDailyHistory();
             return true;
-            
+
         default:
 	            return super.onOptionsItemSelected(item);
 	    }
@@ -187,17 +183,7 @@ public class HelloEEGActivity extends  Activity  {
 		  Intent intent = new Intent(this, TestDatabaseActivity.class);
 		    startActivity(intent);
 		}
-	// Need to work on..
-	public void openSettings(){
-	  Intent intent = new Intent(this, TestDatabaseActivity.class);
-	 // String message = editText.getText().toString();
-	   
-	  intent.putExtra("att_avg", ""+att_avg);
-	  intent.putExtra("att_tot", ""+att_tot);
-	  intent.putExtra("med_avg", ""+med_avg);
-	  intent.putExtra("med_tot", ""+med_tot);
-	    startActivity(intent);
-	}
+	 
 	
     @Override
     public void onDestroy() {
@@ -407,15 +393,15 @@ public class HelloEEGActivity extends  Activity  {
    public void appendGraph(int type, int val){
 	   switch (type ){
 	   case CONST_ATTENTION :
-	      att_Series.appendData(new GraphViewData(i_att_no, val),  true, 40) ;
+	      att_Series.appendData(new GraphViewData(i_att_no, val),  true, 60) ;
 	      i_att_no ++;
 	   break;
 	   case CONST_MEDITATION :
-		   med_Series.appendData(new GraphViewData(i_med_no, val),  true, 40) ;
+		   med_Series.appendData(new GraphViewData(i_med_no, val),  true, 60) ;
 		   i_med_no ++;
 		   break; 
 	   case CONST_SIGNAL :
-		   sig_Series.appendData(new GraphViewData(i_sig_no, val),  true, 40) ;
+		   sig_Series.appendData(new GraphViewData(i_sig_no, val),  true, 60) ;
 		   i_sig_no ++;
 		   break;
 	   } 

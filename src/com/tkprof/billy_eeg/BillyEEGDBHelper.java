@@ -41,9 +41,8 @@ public class BillyEEGDBHelper extends SQLiteOpenHelper {
 	    Log.w(BillyEEGDBHelper.class.getName(),
 	        "Upgrading database from version " + oldVersion + " to "
 	            + newVersion + ", which will destroy all old data");
-	    db.execSQL("DROP TABLE IF EXISTS " + TABLE_BILLY_EEG);
+	  //  db.execSQL("DROP TABLE IF EXISTS " + TABLE_BILLY_EEG);
 	    onCreate(db);
 	  }
-
 	} 
 	 

@@ -51,7 +51,7 @@ public class TestDatabaseActivity extends ListActivity {
     ArrayAdapter<EEGRecord> adapter = (ArrayAdapter<EEGRecord>) getListAdapter();
     EEGRecord EEGRecord = null;
      
-    switch (view.getId()) {
+    /*switch (view.getId()) {
     case R.id.add:
  
         int att_avg = Integer.parseInt(tv_att_tot.getText().toString());
@@ -70,7 +70,7 @@ public class TestDatabaseActivity extends ListActivity {
         adapter.remove(EEGRecord);
       }
       break;
-    }
+    }*/
     adapter.notifyDataSetChanged();
   }
 

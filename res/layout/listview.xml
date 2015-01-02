@@ -3,62 +3,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-
-    <LinearLayout
-        android:id="@+id/group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
-
-        <Button
-            android:id="@+id/add"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add New" 
-            android:onClick="onClick"/>
-
-        <Button
-            android:id="@+id/delete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Delete First" 
-            android:onClick="onClick"/>
-        
-    </LinearLayout>
-
+ 
      <LinearLayout
          android:id="@+id/group1"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:orientation="horizontal" >
-
+             <TextView 
+                 android:layout_width="fill_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_margin="3dp"
+                 android:text="DateTime" /> 
              <TextView
                  android:id="@+id/tv_att_avg"
                  android:layout_width="fill_parent"
                  android:layout_height="wrap_content"
                  android:layout_margin="3dp"
-                 android:text="" />
+                 android:text="A avg" />
  
             <TextView
                 android:id="@+id/tv_att_tot"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="3dp"
-                android:text="" />
+                android:text="A tot" />
  
             <TextView
                 android:id="@+id/tv_med_avg"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="3dp"
-                android:text="" />
+                android:text="M avg" />
  
             <TextView
                 android:id="@+id/tv_med_tot"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="3dp"
-                android:text="" />
+                android:text="M tot" />
         
     </LinearLayout>
     
